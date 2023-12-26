@@ -25,6 +25,7 @@ TAR_CMD=$(HOST_TAR) -C $(1) $(TAR_OPTIONS)
 define KernelPackage/r8125
   TITLE:=Driver for Realtek r8125 chipsets
   SUBMENU:=Network Devices
+  DEPENDS:=+kmod-ptp
   VERSION:=$(LINUX_VERSION)+$(PKG_VERSION)-$(BOARD)-$(PKG_RELEASE)
   FILES:= $(PKG_BUILD_DIR)/src/r8125.ko
   AUTOLOAD:=$(call AutoLoad,35,r8125)
